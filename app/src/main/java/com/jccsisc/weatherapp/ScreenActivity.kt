@@ -12,10 +12,6 @@ class ScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-
-        Thread.sleep(1000)
         goToActivity<MainActivity>()
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         finish()

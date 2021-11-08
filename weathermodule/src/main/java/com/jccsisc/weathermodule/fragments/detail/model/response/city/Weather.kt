@@ -1,4 +1,4 @@
-package com.jccsisc.weathermodule.fragments.menu.model.response.city
+package com.jccsisc.weathermodule.fragments.detail.model.response.city
 
 data class Weather(
     val description: String,

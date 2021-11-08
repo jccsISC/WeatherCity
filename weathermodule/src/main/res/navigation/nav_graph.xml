@@ -22,5 +22,10 @@
         android:id="@+id/WDetailFragment"
         tools:layout="@layout/w_detail_fragment"
         android:name="com.jccsisc.weathermodule.fragments.detail.WDetailFragment"
-        android:label="WDetailFragment" />
+        android:label="WDetailFragment" >
+        <argument
+            android:name="idCity"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
 </navigation>

@@ -1,4 +1,14 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="country">
+        <font color="black" face="raleway_bold" size="20">Pais: </font>
+        <font color="#3949AB" size="14">%s</font>
+    </string>
+    <string name="location">
+        <font color="#3949AB" face="raleway_bold" size="14">Lat: </font>
+        <font color="#F4511E" face="raleway_regular" size="14">%s\n</font>
+         <font color="#3949AB" face="raleway_bold" size="14">Lon: </font>
+        <font color="#F4511E" face="raleway_regular" size="14">%s</font>
+    </string>
 </resources>
