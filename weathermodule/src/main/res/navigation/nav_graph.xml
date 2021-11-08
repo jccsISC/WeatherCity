@@ -9,5 +9,18 @@
         android:id="@+id/WMenuFragment"
         tools:layout="@layout/w_menu_fragment"
         android:name="com.jccsisc.weathermodule.fragments.menu.WMenuFragment"
-        android:label="WMenuFragment" />
+        android:label="WMenuFragment" >
+        <action
+            android:id="@+id/action_WMenuFragment_to_WDetailFragment"
+            app:destination="@id/WDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/WDetailFragment"
+        tools:layout="@layout/w_detail_fragment"
+        android:name="com.jccsisc.weathermodule.fragments.detail.WDetailFragment"
+        android:label="WDetailFragment" />
 </navigation>

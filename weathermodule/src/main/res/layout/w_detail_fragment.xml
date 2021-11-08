@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.tistory.zladnrms.roundablelayout.RoundableLayout
+        android:id="@+id/roundable"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cornerLeftSide="12dp"
+        app:cornerRightSide="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgCity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/cdmx"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_transparent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp">
+                <TextView
+                    android:id="@+id/txtTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="45sp"
+                    android:textColor="@color/white"
+                    android:text="30" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:layout_gravity="end"
+                    android:textColor="@color/white"
+                    android:text="°C" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/imgWeather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rainy_day"
+                android:layout_margin="20dp"
+                android:layout_gravity="end"/>
+
+        </FrameLayout>
+    </com.tistory.zladnrms.roundablelayout.RoundableLayout>
+
+    <TextView
+        android:id="@+id/txtNameCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:layout_marginTop="10dp"
+        android:text="Ciudad de México"
+        app:layout_constraintTop_toBottomOf="@+id/roundable"
+        app:layout_constraintEnd_toEndOf="@+id/roundable"
+        app:layout_constraintStart_toStartOf="@+id/roundable"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
