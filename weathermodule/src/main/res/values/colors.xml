@@ -5,4 +5,5 @@
     <color name="bg_transparent">#80000000</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_color">#40c4ff</color>
 </resources>

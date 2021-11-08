@@ -27,5 +27,9 @@
             android:name="idCity"
             app:argType="string"
             android:defaultValue='""' />
+        <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue='""' />
     </fragment>
 </navigation>

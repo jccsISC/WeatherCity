@@ -1,64 +1,51 @@
 package com.jccsisc.weathermodule.fragments.detail
 
+import com.bumptech.glide.Glide
 import com.jccsisc.weathermodule.common.WEnumsTitles
 import com.jccsisc.weathermodule.common.core.request.RequestModel
 import com.jccsisc.weathermodule.common.core.status.StatusRequestEnum
-import com.jccsisc.weathermodule.fragments.menu.WMenuFragment
+import com.jccsisc.weathermodule.utils.DialogObject
 import com.jccsisc.weathermodule.utils.WLambdasObject
-import com.jccsisc.weathermodule.utils.showToast
+import com.jccsisc.weathermodule.utils.showView
 
 fun WDetailFragment.initElements() {
     mBinding.apply {
-        WLambdasObject.changeTitle?.invoke(WEnumsTitles.DETAILS.title)
 
+        WLambdasObject.changeTitle?.invoke(WEnumsTitles.DETAILS.title)
         viewModel.requestData(args.idCity, RequestModel())
 
     }
 }
 
 fun WDetailFragment.initObservers() {
-    viewModel.responseGeneric.observe(viewLifecycleOwner, { data ->
+    mBinding.apply {
+        viewModel.responseGeneric.observe(viewLifecycleOwner, { data ->
 
-        when (data.statusRequest) {
+            when (data.statusRequest) {
 
-            StatusRequestEnum.LOADING -> showToast("Cargando...") //MOSTRAMOS EL LOTTIE
-            StatusRequestEnum.SUCCESS -> {
-                //OCULTAMOS EL LOTTIE
+                StatusRequestEnum.LOADING -> animationView.showView(true)
+                StatusRequestEnum.SUCCESS -> {
+                    animationView.showView(false)
 
-//                if (!viewModel.isOnBack.value!!) {
-                data.successData?.let {
-                    showToast("Se consumió correctamente")
+                    data.successData?.let {
+                        Glide.with(this@initObservers)
+                            .load(args.image)
+                            .centerCrop()
+                            .into(imgCity)
 
-                    mBinding.apply {
                         txtNameCity.text = it.name
+
+
                     }
-
                 }
-//                }
-
-            }
-            StatusRequestEnum.FAILURE -> {
-                //ocultar lottie
-                data.errorData?.let {
-                    it
-                    showToast(it)
-                    //mostrar dialog del error
-
-                    /*val dialog = CUBlurDialog(
-                        cuTitleModel = CUTitleModel(it.errorResult, CUTitleType.WARNING),
-                        buttonClicked = { dialogView -> dialogView.dismiss() },
-                        buttonType = ButtonType(
-                            CUButtonStyle = CUButtonStyle.NORMAL,
-                            messageButton = getString(R.string.aceptar)
-                        ),
-                        cancelable = true
-                    )
-                    dialog.showCustom(requireActivity().supportFragmentManager, "dialog")*/
+                StatusRequestEnum.FAILURE -> {
+                    animationView.showView(false)
+                    data.errorData?.let {
+                        DialogObject.showDialog(requireActivity(), it)
+                    }
                 }
+                StatusRequestEnum.NONE -> { }
             }
-            StatusRequestEnum.NONE -> {
-            }//OCULTAMOS LOTTIE
-        }
-
-    })
+        })
+    }
 }

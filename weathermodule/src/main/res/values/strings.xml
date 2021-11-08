@@ -11,4 +11,6 @@
          <font color="#3949AB" face="raleway_bold" size="14">Lon: </font>
         <font color="#F4511E" face="raleway_regular" size="14">%s</font>
     </string>
+    <string name="close">Cerrar</string>
+    <string name="erro_conection">Revisa tu conexión de internet o datos móviles</string>
 </resources>

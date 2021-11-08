@@ -22,7 +22,7 @@
             android:id="@+id/imgCity"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/cdmx"
+            tools:src="@color/bg_color"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
                     android:textStyle="bold"
                     android:textSize="45sp"
                     android:textColor="@color/white"
-                    android:text="30" />
+                    android:text="0" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -62,7 +62,6 @@
                 android:src="@drawable/rainy_day"
                 android:layout_margin="20dp"
                 android:layout_gravity="end"/>
-
         </FrameLayout>
     </com.tistory.zladnrms.roundablelayout.RoundableLayout>
 
@@ -73,10 +72,25 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:layout_marginTop="10dp"
-        android:text="Ciudad de México"
+        tools:text="Ciudad de México"
         app:layout_constraintTop_toBottomOf="@+id/roundable"
         app:layout_constraintEnd_toEndOf="@+id/roundable"
         app:layout_constraintStart_toStartOf="@+id/roundable"/>
 
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:lottie_rawRes="@raw/cloudy"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
