@@ -1,12 +1,5 @@
 package com.jccsisc.weathermodule.fragments.detail.model.response.city
 
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Clouds
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Coord
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Main
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Sys
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Weather
-import com.jccsisc.weathermodule.fragments.detail.model.response.city.Wind
-
 data class WDetailsCityResponse(
     val base: String,
     val clouds: Clouds,

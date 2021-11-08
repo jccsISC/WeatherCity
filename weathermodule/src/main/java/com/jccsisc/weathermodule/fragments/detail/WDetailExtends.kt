@@ -1,6 +1,7 @@
 package com.jccsisc.weathermodule.fragments.detail
 
 import com.bumptech.glide.Glide
+import com.jccsisc.weathermodule.R
 import com.jccsisc.weathermodule.common.WEnumsTitles
 import com.jccsisc.weathermodule.common.core.request.RequestModel
 import com.jccsisc.weathermodule.common.core.status.StatusRequestEnum
@@ -34,8 +35,24 @@ fun WDetailFragment.initObservers() {
                             .into(imgCity)
 
                         txtNameCity.text = it.name
+                        txtTemp.text = it.main.temp.toString()
 
+                        for (i in it.weather) {
+                            txtWeather.text = getString(R.string.weather, i.main)
+                            txtDescription.text = getString(R.string.description, i.description)
 
+                            when(i.icon) {
+                                "01d" -> {
+                                    imgWeather.setImageResource(R.drawable.one)
+                                }
+                                "03d" -> {
+                                    imgWeather.setImageResource(R.drawable.three)
+                                }
+                                "04d" -> {
+                                    imgWeather.setImageResource(R.drawable.four)
+                                }
+                            }
+                        }
                     }
                 }
                 StatusRequestEnum.FAILURE -> {

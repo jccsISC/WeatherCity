@@ -13,4 +13,6 @@
     </string>
     <string name="close">Cerrar</string>
     <string name="erro_conection">Revisa tu conexión de internet o datos móviles</string>
+    <string name="weather">Weather: %s</string>
+    <string name="description">Description: %s</string>
 </resources>

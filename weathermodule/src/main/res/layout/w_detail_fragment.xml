@@ -71,6 +71,8 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="24sp"
+        android:textColor="@color/primary_color"
+        android:fontFamily="@font/raleway_bold"
         android:layout_marginTop="10dp"
         tools:text="Ciudad de México"
         app:layout_constraintTop_toBottomOf="@+id/roundable"
@@ -78,6 +80,27 @@
         app:layout_constraintStart_toStartOf="@+id/roundable"/>
 
 
+    <TextView
+        android:id="@+id/txtWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway_medium"
+        tools:text="Clima"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txtNameCity"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameCity" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/raleway_medium"
+        tools:text="Clima"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="@+id/txtWeather"
+        app:layout_constraintTop_toBottomOf="@+id/txtWeather" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
